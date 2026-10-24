@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# vendor/gms is not part of this tree; override with WITH_GMS=true if it is added back
+WITH_GMS ?= false
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -22,11 +25,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some common YAAP stuff.
-$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 IS_PHONE := true
 
-PRODUCT_NAME := yaap_pdx203
+PRODUCT_NAME := lineage_pdx203
 PRODUCT_DEVICE := pdx203
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_BRAND := Sony
