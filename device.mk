@@ -25,6 +25,10 @@
 # Inherit from sony sm8250-common
 $(call inherit-product, device/sony/sm8250-common/edo.mk)
 
+# Audio
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
@@ -38,9 +42,6 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
 PRODUCT_PACKAGES += \
     SonyPDX203SystemUIRes \
     SonyPDX203FrameworksRes
