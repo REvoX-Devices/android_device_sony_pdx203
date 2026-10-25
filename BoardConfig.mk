@@ -22,7 +22,7 @@ DEVICE_PATH := device/sony/pdx203
 # Display
 TARGET_SCREEN_DENSITY := 420
 
-BOARD_KERNEL_CMDLINE += buildproduct=pdx203
+BOARD_KERNEL_CMDLINE += buildproduct=pdx203_docomo
 
 TARGET_KERNEL_SOURCE := kernel/sony/sm8250
 TARGET_KERNEL_CONFIG += vendor/pdx203.config

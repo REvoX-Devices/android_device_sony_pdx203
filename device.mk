@@ -25,9 +25,11 @@
 # Inherit from sony sm8250-common
 $(call inherit-product, device/sony/sm8250-common/edo.mk)
 
-# Audio
+# Audio (the legacy Dolby libs get their tuning from vendor/sony/so51a)
+ifeq ($(wildcard vendor/sony/so51a/so51a.mk),)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
+endif
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
@@ -45,6 +47,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SonyPDX203SystemUIRes \
     SonyPDX203FrameworksRes
+
+# Regulatory labels (private repo, optional)
+$(call inherit-product-if-exists, vendor/sony/elabel/elabel.mk)
 
 # HDR
 PRODUCT_COPY_FILES += \

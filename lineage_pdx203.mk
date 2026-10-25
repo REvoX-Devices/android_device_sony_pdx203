@@ -14,8 +14,7 @@
 # limitations under the License.
 #
 
-# vendor/gms is not part of this tree; override with WITH_GMS=true if it is added back
-WITH_GMS ?= false
+WITH_GMS ?= true
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -33,14 +32,14 @@ PRODUCT_NAME := lineage_pdx203
 PRODUCT_DEVICE := pdx203
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_BRAND := Sony
-PRODUCT_MODEL := XQ-AT52
+PRODUCT_MODEL := SO-51A
 
 PRODUCT_GMS_CLIENTID_BASE := android-sonymobile
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="XQ-AT52-user 12 58.2.A.7.93 058002A007009304241360111 release-keys" \
-    BuildFingerprint=Sony/XQ-AT52/XQ-AT52:12/58.2.A.7.93/058002A007009304241360111:user/release-keys \
-    DeviceName=XQ-AT52 \
-    DeviceProduct=XQ-AT52 \
-    SystemDevice=XQ-AT52 \
-    SystemName=XQ-AT52
+    BuildDesc="SO-51A-user 12 58.2.B.0.520 058002B000052002813269650 release-keys" \
+    BuildFingerprint=docomo/SO-51A/SO-51A:12/58.2.B.0.520/058002B000052002813269650:user/release-keys \
+    DeviceName=SO-51A \
+    DeviceProduct=SO-51A \
+    SystemDevice=SO-51A \
+    SystemName=SO-51A
